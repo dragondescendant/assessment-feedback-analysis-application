@@ -1,9 +1,9 @@
 Assessment Feedback Analysis Application
 
-University of Auckland
-Software Engineering 788: Project Y
-Semesters 1 and 2, 2019
-Superviser: Dr Nasser Giacaman
+University of Auckland  
+Software Engineering 788: Project Y  
+Semesters 1 and 2, 2019  
+Superviser: Dr Nasser Giacaman  
 Student: Gen Li
 
 This application is part of a project that the repository owner (Gen Li) had to complete for the course Software Engineering 788: Project Y under the supervision of Dr Nasser Giacaman at the University of Auckland during semesters 1 and 2 of 2019 towards the university's Master of Engineering Studies in Software Engineering.
