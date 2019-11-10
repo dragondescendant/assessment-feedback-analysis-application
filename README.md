@@ -16,4 +16,4 @@ The primary functionalities of the system are:
 - The retrieval of stored data.
 - The manipulation and visualisation of retrieved data for analysis.
 
-The application consists of an interface that's implemented using React, a REST server that's implemented using Java and Spring WebFlux,  and a MongoDB database.
+The application consists of an interface that's implemented using React, a REST server that's implemented using Java and Spring WebFlux and a MongoDB database.
