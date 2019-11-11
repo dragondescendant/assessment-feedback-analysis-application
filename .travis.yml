@@ -2,4 +2,4 @@ language: java
 jdk: oraclejdk13
 
 script:
-- ./server/gradlew clean test
+- ./server/gradlew clean test -p server
