@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dragondescendant/assessment-feedback-analysis-application.svg?branch=master)](https://travis-ci.org/dragondescendant/assessment-feedback-analysis-application)
+
 Assessment Feedback Analysis Application
 
 University of Auckland  
