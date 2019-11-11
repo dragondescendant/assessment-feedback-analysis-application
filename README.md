@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/dragondescendant/assessment-feedback-analysis-application.svg?branch=master)](https://travis-ci.org/dragondescendant/assessment-feedback-analysis-application)
-
 Assessment Feedback Analysis Application
+[![Build Status](https://travis-ci.org/dragondescendant/assessment-feedback-analysis-application.svg?branch=master)](https://travis-ci.org/dragondescendant/assessment-feedback-analysis-application)
 
 University of Auckland  
 Software Engineering 788: Project Y  
