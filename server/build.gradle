@@ -8,7 +8,7 @@ repositories {
     mavenCentral()
 }
 
-group = 'nz.ac.auckland.gli030.assessment_feedback_analysis'
+group = 'nz.ac.auckland.gli030.assessment_feedback_analysis_application'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '13'
 targetCompatibility = '13'
