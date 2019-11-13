@@ -15,6 +15,6 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @ToString(callSuper = true)
-public class FeedbackStringMetadata extends FeedbackMetadata {
+public class FeedbackTextMetadata extends FeedbackMetadata {
     private String data;
 }
