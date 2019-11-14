@@ -16,6 +16,6 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @ToString(callSuper = true)
-public class FeedbackDateMetadata extends FeedbackMetadata {
+public class FeedbackDateTimeMetadata extends FeedbackMetadata {
     private Date data;
 }
