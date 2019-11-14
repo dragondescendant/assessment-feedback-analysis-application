@@ -15,6 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @SuperBuilder
 public class Person {
     @Id
+    private Long id;
     private String emailAddress;
     private String firstName;
     private String lastName;

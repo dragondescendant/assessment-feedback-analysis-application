@@ -20,7 +20,7 @@ public class Feedback {
     private String name;
     private String description;
     private Map<String, String> attributes;
-    private String giverEmailAddress;
-    private List<String> receiverEmailAddresses;
+    private Long giverId;
+    private List<Long> receiverIds;
     private List<Long> metadataIds;
 }
