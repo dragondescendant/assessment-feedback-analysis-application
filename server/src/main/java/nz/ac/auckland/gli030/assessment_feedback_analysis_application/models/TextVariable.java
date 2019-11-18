@@ -1,6 +1,6 @@
 package nz.ac.auckland.gli030.assessment_feedback_analysis_application.models;
 
-import java.util.Date;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,6 +16,7 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @ToString(callSuper = true)
-public class FeedbackDateTimeMetadata extends FeedbackMetadata {
-    private Date data;
+public class TextVariable extends QualtricsSurveyVariable {
+    @NotNull
+    private String value;
 }

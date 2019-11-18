@@ -1,6 +1,8 @@
 package nz.ac.auckland.gli030.assessment_feedback_analysis_application.models;
 
-import java.util.List;
+import java.util.Set;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -17,5 +19,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @ToString(callSuper = true)
 public class Student extends Person {
-    List<Long> idsFeedbackReceived;
+    @NotNull
+    Set<@NotNull @Positive Long> idsFeedbackReceived;
 }

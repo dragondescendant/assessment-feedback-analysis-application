@@ -1,5 +1,7 @@
 package nz.ac.auckland.gli030.assessment_feedback_analysis_application.models;
 
+import java.net.Inet4Address;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -15,6 +17,7 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @ToString(callSuper = true)
-public class NumericFeedback extends Feedback {
-    private Double feedback;
+public class Inet4AddressVariable extends QualtricsSurveyVariable {
+    @NotNull
+    private Inet4Address value;
 }

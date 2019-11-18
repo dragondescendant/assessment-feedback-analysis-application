@@ -1,11 +1,12 @@
 package nz.ac.auckland.gli030.assessment_feedback_analysis_application.models;
 
 import java.util.Map;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @AllArgsConstructor
@@ -13,10 +14,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 @NoArgsConstructor
 @SuperBuilder
-public class FeedbackMetadata {
-    @Id
-    private Long id;
+public abstract class QualtricsSurveyVariable {
+    @NotBlank
     private String name;
+    @NotBlank
     private String description;
-    private Map<String, String> attributes;
+    @NotNull
+    private Map<@NotBlank String, @NotNull String> attributes;
 }
