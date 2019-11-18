@@ -1,13 +1,8 @@
 package nz.ac.auckland.gli030.assessment_feedback_analysis_application.models;
 
-import java.util.List;
-import java.util.Set;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.*;
+import javax.validation.constraints.*;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
