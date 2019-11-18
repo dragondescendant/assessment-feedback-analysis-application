@@ -22,7 +22,7 @@ public class PersonServiceTest {
 
     @Test
     void getWithOneId() {
-        given(repository.findAllById(Flux.just(1L)).willReturn(Flux.just(teacherOne));
+        given(repository.findAllById(Flux.just(1L))).willReturn(Flux.just(teacherOne));
 
         var persons = service.get(Flux.just(1L));
 
@@ -80,8 +80,8 @@ public class PersonServiceTest {
 
     @Test
     void saveNewPerson() {
-        given(repository.findAllByEmailAddress(Flux.just(teacherOne.getEmailAddress())).willReturn(Flux.empty());
-        given(repository.saveAll(Flux.just(teacherOne)).willReturn(Flux.just(teacherOne));
+        given(repository.findAllByEmailAddress(Flux.just(teacherOne.getEmailAddress()))).willReturn(Flux.empty());
+        given(repository.saveAll(Flux.just(teacherOne))).willReturn(Flux.just(teacherOne));
 
         var persons = service.save(Flux.just(teacherOne));
 
@@ -100,11 +100,11 @@ public class PersonServiceTest {
             teacherOneUpdated = new Teacher(
                 teacherOne.getId(),
                 teacherOneUpdate.getEmailAddress(),
-                teacherOneUpdate.getFirstName()
-                teacherOneUpdate.getLastName()
+                teacherOneUpdate.getFirstName(),
+                teacherOneUpdate.getLastName(),
                 teacherOneUpdate.getIdsFeedbackGiven());
-        given(repository.findAllByEmailAddress(Flux.just(teacherOneUpdate.getEmailAddress())).willReturn(Flux.just(teacherOne));
-        given(repository.saveAll(Flux.just(teacherOneUpdated)).willReturn(Flux.just(teacherOneUpdated));
+        given(repository.findAllByEmailAddress(Flux.just(teacherOneUpdate.getEmailAddress()))).willReturn(Flux.just(teacherOne));
+        given(repository.saveAll(Flux.just(teacherOneUpdated))).willReturn(Flux.just(teacherOneUpdated));
 
         var persons = service.save(Flux.just(teacherOneUpdate));
 
