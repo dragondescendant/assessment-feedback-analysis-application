@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 @NoArgsConstructor
 @SuperBuilder
-public class Person {
+public abstract class Person {
     @Id
     private Long id;
     @Email
