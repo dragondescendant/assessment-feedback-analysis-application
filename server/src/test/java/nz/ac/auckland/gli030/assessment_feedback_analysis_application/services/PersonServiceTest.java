@@ -96,13 +96,13 @@ public class PersonServiceTest {
 
     @Test
     void saveExistingPerson() {
-        var teacherOneUpdate = new Teacher(7L, "i@j.co.nz", "k", "l", new HashSet<Long>(Arrays.asList(8L, 9L))),
-            teacherOneUpdated = new Teacher(
-                teacherOne.getId(),
-                teacherOneUpdate.getEmailAddress(),
-                teacherOneUpdate.getFirstName(),
-                teacherOneUpdate.getLastName(),
-                teacherOneUpdate.getIdsFeedbackGiven());
+        Teacher teacherOneUpdate = new Teacher(7L, "i@j.co.nz", "k", "l", new HashSet<Long>(Arrays.asList(8L, 9L))),
+                teacherOneUpdated = new Teacher(
+                    teacherOne.getId(),
+                    teacherOneUpdate.getEmailAddress(),
+                    teacherOneUpdate.getFirstName(),
+                    teacherOneUpdate.getLastName(),
+                    teacherOneUpdate.getIdsFeedbackGiven());
         given(repository.findAllByEmailAddress(Flux.just(teacherOneUpdate.getEmailAddress()))).willReturn(Flux.just(teacherOne));
         given(repository.saveAll(Flux.just(teacherOneUpdated))).willReturn(Flux.just(teacherOneUpdated));
 
