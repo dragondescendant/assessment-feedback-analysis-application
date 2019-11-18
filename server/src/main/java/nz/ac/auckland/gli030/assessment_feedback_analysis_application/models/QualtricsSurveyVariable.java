@@ -6,10 +6,8 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@AllArgsConstructor
 @Data
 @Document
-@NoArgsConstructor
 @SuperBuilder
 public abstract class QualtricsSurveyVariable {
     @NotBlank

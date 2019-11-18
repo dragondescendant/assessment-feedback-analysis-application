@@ -17,8 +17,18 @@ import static org.mockito.Mockito.*;
 public class PersonServiceTest {
     PersonReactiveMongoRepository repository = mock(PersonReactiveMongoRepository.class);
     PersonService service = new PersonService(repository);
-    Teacher teacherOne = new Teacher(1L, "a@b.co.nz", "c", "d", new HashSet<Long>(Arrays.asList(2L, 3L)));
-    Teacher teacherTwo = new Teacher(4L, "e@f.co.nz", "g", "h", new HashSet<Long>(Arrays.asList(5L, 6L)));
+    Teacher teacherOne = Teacher.builder()
+        .id(1L)
+        .emailAddress("a@b.co.nz")
+        .firstName("c")
+        .lastName("d")
+        .idsFeedbackGiven(new HashSet<Long>(Arrays.asList(2L, 3L))).build();
+    Teacher teacherTwo = Teacher.builder()
+        .id(4L)
+        .emailAddress("e@f.co.nz")
+        .firstName("g")
+        .lastName("h")
+        .idsFeedbackGiven(new HashSet<Long>(Arrays.asList(5L, 6L))).build();
 
     @Test
     void getWithOneId() {
@@ -46,7 +56,9 @@ public class PersonServiceTest {
 
     @Test
     void getWithNullId() {
-        var persons = service.get(Flux.just(null));
+        Long id = null;        
+
+        var persons = service.get(Flux.just(id));
 
         then(repository).shouldHaveNoInteractions();
         StepVerifier.create(persons)
@@ -96,13 +108,18 @@ public class PersonServiceTest {
 
     @Test
     void saveExistingPerson() {
-        Teacher teacherOneUpdate = new Teacher(7L, "i@j.co.nz", "k", "l", new HashSet<Long>(Arrays.asList(8L, 9L))),
-                teacherOneUpdated = new Teacher(
-                    teacherOne.getId(),
-                    teacherOneUpdate.getEmailAddress(),
-                    teacherOneUpdate.getFirstName(),
-                    teacherOneUpdate.getLastName(),
-                    teacherOneUpdate.getIdsFeedbackGiven());
+        var teacherOneUpdate = Teacher.builder()
+            .id(7L)
+            .emailAddress("i@j.co.nz")
+            .firstName("k")
+            .lastName("l")
+            .idsFeedbackGiven(new HashSet<Long>(Arrays.asList(8L, 9L))).build();
+        var teacherOneUpdated = Teacher.builder()
+            .id(teacherOne.getId())
+            .emailAddress(teacherOneUpdate.getEmailAddress())
+            .firstName(teacherOneUpdate.getFirstName())
+            .lastName(teacherOneUpdate.getLastName())
+            .idsFeedbackGiven(teacherOneUpdate.getIdsFeedbackGiven()).build();
         given(repository.findAllByEmailAddress(Flux.just(teacherOneUpdate.getEmailAddress()))).willReturn(Flux.just(teacherOne));
         given(repository.saveAll(Flux.just(teacherOneUpdated))).willReturn(Flux.just(teacherOneUpdated));
 
@@ -119,7 +136,12 @@ public class PersonServiceTest {
 
     @Test
     void saveInvalidPerson() {
-        var teacherInvalidEmailAddress = new Teacher(10L, "mn", "o", "p", new HashSet<Long>(Arrays.asList(11L, 12L)));
+        var teacherInvalidEmailAddress = Teacher.builder()
+            .id(10L)
+            .emailAddress("mn")
+            .firstName("o")
+            .lastName("p")
+            .idsFeedbackGiven(new HashSet<Long>(Arrays.asList(11L, 12L))).build();
 
         var persons = service.save(Flux.just(teacherInvalidEmailAddress));
 
@@ -131,7 +153,9 @@ public class PersonServiceTest {
 
     @Test
     void saveNullPerson() {
-        var persons = service.save(Flux.just(null));
+        Person person = null;
+
+        var persons = service.save(Flux.just(person));
         
         then(repository).shouldHaveNoInteractions();
         StepVerifier.create(persons)

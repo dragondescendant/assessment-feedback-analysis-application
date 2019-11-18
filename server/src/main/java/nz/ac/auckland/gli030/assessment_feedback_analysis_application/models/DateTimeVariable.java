@@ -5,10 +5,8 @@ import javax.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Getter
-@NoArgsConstructor
 @Setter
 @SuperBuilder
 @ToString(callSuper = true)
