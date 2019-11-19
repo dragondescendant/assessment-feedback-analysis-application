@@ -18,7 +18,7 @@ public class PersonService {
     }
 
     public Flux<Person> getAll() {
-        return null;
+        return repository.findAll();
     }
 
     public Flux<Person> save(Flux<Person> persons) {
