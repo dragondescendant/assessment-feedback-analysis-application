@@ -5,6 +5,6 @@ import org.reactivestreams.Publisher;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Flux;
 
-public interface PersonReactiveMongoRepository extends ReactiveMongoRepository<Person, Long> {
+public interface PersonReactiveMongoRepository extends ReactiveMongoRepository<Person, String> {
     Flux<Person> findAllByEmailAddress(Publisher<String> emailAddressStream);
 }
