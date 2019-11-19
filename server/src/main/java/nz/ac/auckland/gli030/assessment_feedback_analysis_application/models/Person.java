@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @SuperBuilder
 public abstract class Person {
     @Id
-    private Long id;
+    private String id;
     @Email
     private String emailAddress;
     @NotBlank
@@ -20,5 +20,5 @@ public abstract class Person {
     @NotBlank
     private String lastName;
     @NotNull
-    private Set<@NotNull @Positive Long> idsFeedbackGiven;
+    private Set<@NotBlank String> idsFeedbackGiven;
 }

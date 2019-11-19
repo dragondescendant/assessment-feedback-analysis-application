@@ -1,20 +1,19 @@
 package nz.ac.auckland.gli030.assessment_feedback_analysis_application.services;
 
 import nz.ac.auckland.gli030.assessment_feedback_analysis_application.models.Person;
-import org.reactivestreams.Publisher;
-import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import nz.ac.auckland.gli030.assessment_feedback_analysis_application.repositories.PersonReactiveMongoRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 @Service
 public class PersonService {
-    private ReactiveCrudRepository<Person, Long> personRepository;
+    private PersonReactiveMongoRepository repository;
 
-    public PersonService(ReactiveCrudRepository<Person, Long> personRepository) {
-        this.personRepository = personRepository;
+    public PersonService(PersonReactiveMongoRepository repository) {
+        this.repository = repository;
     }
 
-    public Flux<Person> get(Publisher<Long> ids) {
+    public Flux<Person> get(Flux<String> ids) {
         return null;
     }
 
@@ -22,7 +21,7 @@ public class PersonService {
         return null;
     }
 
-    public Flux<Person> save(Publisher<Person> persons) {
+    public Flux<Person> save(Flux<Person> persons) {
         return null;
     }
 }

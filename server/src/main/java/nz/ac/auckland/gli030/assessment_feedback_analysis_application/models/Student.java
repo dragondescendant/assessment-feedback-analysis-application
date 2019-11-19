@@ -12,5 +12,5 @@ import lombok.experimental.SuperBuilder;
 @ToString(callSuper = true)
 public class Student extends Person {
     @NotNull
-    Set<@NotNull @Positive Long> idsFeedbackReceived;
+    Set<@NotBlank String> idsFeedbackReceived;
 }

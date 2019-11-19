@@ -12,12 +12,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @SuperBuilder
 public class Feedback {
     @Id
-    private Long id;
-    @NotNull
-    @Positive
-    private Long giverId;
+    private String id;
+    @NotBlank
+    private String giverId;
     @NotEmpty
-    private Set<@NotNull @Positive Long> receiverIds;
+    private Set<@NotBlank String> receiverIds;
     @NotNull
     private QualtricsSurveyVariable data;
     @NotNull
