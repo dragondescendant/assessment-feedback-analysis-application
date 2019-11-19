@@ -1,7 +1,7 @@
 package nz.ac.auckland.gli030.assessment_feedback_analysis_application.services;
 
 import java.util.*;
-import javax.validation.ConstraintViolationException;
+import javax.validation.*;
 import nz.ac.auckland.gli030.assessment_feedback_analysis_application.models.*;
 import nz.ac.auckland.gli030.assessment_feedback_analysis_application.repositories.PersonReactiveMongoRepository;
 import nz.ac.auckland.gli030.assessment_feedback_analysis_application.services.PersonService;
@@ -15,7 +15,9 @@ import static org.mockito.Mockito.*;
 
 public class PersonServiceTest {
     PersonReactiveMongoRepository repository = mock(PersonReactiveMongoRepository.class);
-    PersonService service = new PersonService(repository);
+    PersonService service = new PersonService(
+        repository,
+        Validation.buildDefaultValidatorFactory().getValidator());
     Teacher teacherOne = Teacher.builder()
         .id("a")
         .emailAddress("b@c.co.nz")
