@@ -4,7 +4,7 @@ import javax.validation.Validator;
 import nz.ac.auckland.gli030.assessment_feedback_analysis_application.models.Person;
 import nz.ac.auckland.gli030.assessment_feedback_analysis_application.repositories.PersonReactiveMongoRepository;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.*;
 
 @Service
 public class PersonService {
@@ -16,7 +16,7 @@ public class PersonService {
         this.validator = validator;
     }
 
-    public Flux<Person> get(Flux<String> ids) {
+    public Mono<Person> get(String id) {
         return null;
     }
 
