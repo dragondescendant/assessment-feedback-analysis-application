@@ -4,10 +4,8 @@ import java.util.Map;
 import javax.validation.constraints.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document
 @SuperBuilder
 public abstract class QualtricsSurveyVariable {
     @NotBlank
